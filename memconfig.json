@@ -1,0 +1,1404 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "fields": [
+          {
+            "name": "artifacts",
+            "type": "ArtifactCollection"
+          },
+          {
+            "name": "deployments",
+            "type": "DeploymentCollection"
+          },
+          {
+            "name": "certs",
+            "type": "CertCollection"
+          },
+          {
+            "name": "events",
+            "type": "EventCollection"
+          },
+          {
+            "name": "aliases",
+            "type": "AliasCollection"
+          },
+          {
+            "name": "files",
+            "type": "FileCollection"
+          },
+          {
+            "name": "users",
+            "type": "UserCollection"
+          },
+          {
+            "name": "domains",
+            "type": "DomainCollection"
+          },
+          {
+            "name": "secrets",
+            "type": "SecretCollection"
+          },
+          {
+            "name": "projects",
+            "type": "ProjectCollection"
+          },
+          {
+            "name": "verifies",
+            "type": "VerifyCollection"
+          },
+          {
+            "name": "integrations",
+            "type": "IntegrationCollection"
+          },
+          {
+            "name": "teams",
+            "type": "TeamCollection"
+          }
+        ],
+        "actions": [
+          {
+            "name": "configure",
+            "type": "Void",
+            "params": [
+              {
+                "name": "token",
+                "type": "String"
+              }
+            ]
+          }
+        ],
+        "events": []
+      },
+      {
+        "name": "Artifact",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Artifact"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Deployment",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Deployment"
+          },
+          {
+            "name": "aliasAssignedAt",
+            "type": "Int"
+          },
+          {
+            "name": "build",
+            "type": "String"
+          },
+          {
+            "name": "builds",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "createdIn",
+            "type": "String"
+          },
+          {
+            "name": "env",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "functions",
+            "type": "String"
+          },
+          {
+            "name": "inspectorUrl",
+            "type": "String"
+          },
+          {
+            "name": "meta",
+            "type": "String"
+          },
+          {
+            "name": "monorepoManager",
+            "type": "String"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "hints": {
+              "primary": true
+            }
+          },
+          {
+            "name": "ownerId",
+            "type": "String"
+          },
+          {
+            "name": "plan",
+            "type": "String"
+          },
+          {
+            "name": "projectId",
+            "type": "String"
+          },
+          {
+            "name": "routes",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "alias",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "aliasAssigned",
+            "type": "Boolean"
+          },
+          {
+            "name": "aliasError",
+            "type": "String"
+          },
+          {
+            "name": "aliasFinal",
+            "type": "String"
+          },
+          {
+            "name": "aliasWarning",
+            "type": "String"
+          },
+          {
+            "name": "automaticAliases",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "bootedAt",
+            "type": "Int"
+          },
+          {
+            "name": "buildErrorAt",
+            "type": "Int"
+          },
+          {
+            "name": "buildingAt",
+            "type": "Int"
+          },
+          {
+            "name": "canceledAt",
+            "type": "Int"
+          },
+          {
+            "name": "checksState",
+            "type": "String"
+          },
+          {
+            "name": "checksConclusion",
+            "type": "String"
+          },
+          {
+            "name": "createdAt",
+            "type": "Int"
+          },
+          {
+            "name": "creator",
+            "type": "String"
+          },
+          {
+            "name": "errorCode",
+            "type": "String"
+          },
+          {
+            "name": "errorLink",
+            "type": "String"
+          },
+          {
+            "name": "errorMessage",
+            "type": "String"
+          },
+          {
+            "name": "errorStep",
+            "type": "String"
+          },
+          {
+            "name": "gitSource",
+            "type": "String"
+          },
+          {
+            "name": "id",
+            "type": "String"
+          },
+          {
+            "name": "lambdas",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "public",
+            "type": "Boolean"
+          },
+          {
+            "name": "readyState",
+            "type": "String"
+          },
+          {
+            "name": "regions",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "source",
+            "type": "String"
+          },
+          {
+            "name": "target",
+            "type": "String"
+          },
+          {
+            "name": "team",
+            "type": "String"
+          },
+          {
+            "name": "type",
+            "type": "String"
+          },
+          {
+            "name": "url",
+            "type": "String"
+          },
+          {
+            "name": "userAliases",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "version",
+            "type": "Int"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Cert",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Cert"
+          },
+          {
+            "name": "id",
+            "type": "String"
+          },
+          {
+            "name": "createdAt",
+            "type": "Int"
+          },
+          {
+            "name": "expiresAt",
+            "type": "Int"
+          },
+          {
+            "name": "autoRenew",
+            "type": "Boolean"
+          },
+          {
+            "name": "cns",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Event",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Event"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Alias",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Alias"
+          },
+          {
+            "name": "alias",
+            "type": "String",
+            "hints": {
+              "primary": true
+            }
+          },
+          {
+            "name": "created",
+            "type": "String"
+          },
+          {
+            "name": "createdAt",
+            "type": "Int"
+          },
+          {
+            "name": "creator",
+            "type": "String"
+          },
+          {
+            "name": "deletedAt",
+            "type": "Int"
+          },
+          {
+            "name": "deployment",
+            "type": "String"
+          },
+          {
+            "name": "deploymentId",
+            "type": "String"
+          },
+          {
+            "name": "projectId",
+            "type": "String"
+          },
+          {
+            "name": "redirect",
+            "type": "String"
+          },
+          {
+            "name": "redirectStatusCode",
+            "type": "Int"
+          },
+          {
+            "name": "uid",
+            "type": "String"
+          },
+          {
+            "name": "updatedAt",
+            "type": "Int"
+          },
+          {
+            "name": "protectionBypass",
+            "type": "String"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "File",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "File"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "User",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "User"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Domain",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Domain"
+          },
+          {
+            "name": "domain",
+            "type": "String"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Secret",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Secret"
+          },
+          {
+            "name": "created",
+            "type": "String"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "hints": {
+              "primary": true
+            }
+          },
+          {
+            "name": "teamId",
+            "type": "String"
+          },
+          {
+            "name": "uid",
+            "type": "String"
+          },
+          {
+            "name": "userId",
+            "type": "String"
+          },
+          {
+            "name": "value",
+            "type": "String"
+          },
+          {
+            "name": "createdAt",
+            "type": "Int"
+          },
+          {
+            "name": "projectId",
+            "type": "String"
+          },
+          {
+            "name": "decryptable",
+            "type": "Boolean"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Project",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Project"
+          },
+          {
+            "name": "accountId",
+            "type": "String"
+          },
+          {
+            "name": "analytics",
+            "type": "String"
+          },
+          {
+            "name": "autoExposeSystemEnvs",
+            "type": "Boolean"
+          },
+          {
+            "name": "buildCommand",
+            "type": "String"
+          },
+          {
+            "name": "commandForIgnoringBuildStep",
+            "type": "String"
+          },
+          {
+            "name": "createdAt",
+            "type": "Int"
+          },
+          {
+            "name": "devCommand",
+            "type": "String"
+          },
+          {
+            "name": "directoryListing",
+            "type": "Boolean"
+          },
+          {
+            "name": "installCommand",
+            "type": "String"
+          },
+          {
+            "name": "env",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "framework",
+            "type": "String"
+          },
+          {
+            "name": "gitForkProtection",
+            "type": "Boolean"
+          },
+          {
+            "name": "id",
+            "type": "String"
+          },
+          {
+            "name": "latestDeployments",
+            "type": "List",
+            "ofType": {
+              "type": "String"
+            }
+          },
+          {
+            "name": "link",
+            "type": "String"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "hints": {
+              "primary": true
+            }
+          },
+          {
+            "name": "nodeVersion",
+            "type": "String"
+          },
+          {
+            "name": "outputDirectory",
+            "type": "String"
+          },
+          {
+            "name": "passwordProtection",
+            "type": "String"
+          },
+          {
+            "name": "publicSource",
+            "type": "Boolean"
+          },
+          {
+            "name": "rootDirectory",
+            "type": "String"
+          },
+          {
+            "name": "serverlessFunctionRegion",
+            "type": "String"
+          },
+          {
+            "name": "skipGitConnectDuringLink",
+            "type": "Boolean"
+          },
+          {
+            "name": "sourceFilesOutsideRootDirectory",
+            "type": "Boolean"
+          },
+          {
+            "name": "ssoProtection",
+            "type": "String"
+          },
+          {
+            "name": "targets",
+            "type": "String"
+          },
+          {
+            "name": "transferCompletedAt",
+            "type": "Int"
+          },
+          {
+            "name": "transferStartedAt",
+            "type": "Int"
+          },
+          {
+            "name": "transferToAccountId",
+            "type": "String"
+          },
+          {
+            "name": "transferredFromAccountId",
+            "type": "String"
+          },
+          {
+            "name": "updatedAt",
+            "type": "Int"
+          },
+          {
+            "name": "live",
+            "type": "Boolean"
+          },
+          {
+            "name": "enablePreviewFeedback",
+            "type": "Boolean"
+          },
+          {
+            "name": "permissions",
+            "type": "String"
+          },
+          {
+            "name": "lastRollbackTarget",
+            "type": "String"
+          },
+          {
+            "name": "hasFloatingAliases",
+            "type": "Boolean"
+          },
+          {
+            "name": "protectionBypass",
+            "type": "String"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Verify",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Verify"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Integration",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Integration"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "Team",
+        "fields": [
+          {
+            "name": "gref",
+            "type": "Ref",
+            "ofType": "Team"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "ArtifactCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Artifact",
+            "params": [
+              {
+                "name": "x-artifact-client-ci",
+                "type": "String",
+                "description": "The continuous integration or delivery environment where this artifact is downloaded."
+              },
+              {
+                "name": "x-artifact-client-interactive",
+                "type": "Int",
+                "description": "1 if the client is an interactive shell. Otherwise 0"
+              },
+              {
+                "name": "hash",
+                "type": "String",
+                "description": "The artifact hash"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "DeploymentCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Deployment",
+            "params": [
+              {
+                "name": "idOrUrl",
+                "type": "String",
+                "description": "The unique identifier or hostname of the deployment."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "DeploymentPage",
+            "params": [
+              {
+                "name": "app",
+                "type": "String",
+                "description": "Name of the deployment."
+              },
+              {
+                "name": "from",
+                "type": "Int",
+                "description": "Gets the deployment created after this Date timestamp. (default: current time)"
+              },
+              {
+                "name": "limit",
+                "type": "Int",
+                "description": "Maximum number of deployments to list from a request."
+              },
+              {
+                "name": "projectId",
+                "type": "String",
+                "description": "Filter deployments from the given `projectId`."
+              },
+              {
+                "name": "target",
+                "type": "String",
+                "description": "Filter deployments based on the environment."
+              },
+              {
+                "name": "to",
+                "type": "Int",
+                "description": "Gets the deployment created before this Date timestamp. (default: current time)"
+              },
+              {
+                "name": "users",
+                "type": "String",
+                "description": "Filter out deployments based on users who have created the deployment."
+              },
+              {
+                "name": "since",
+                "type": "Int",
+                "description": "Get Deployments created after this JavaScript timestamp."
+              },
+              {
+                "name": "until",
+                "type": "Int",
+                "description": "Get Deployments created before this JavaScript timestamp."
+              },
+              {
+                "name": "state",
+                "type": "String",
+                "description": "Filter deployments based on their state (`BUILDING`, `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`)"
+              },
+              {
+                "name": "rollbackCandidate",
+                "type": "Boolean",
+                "description": "Filter deployments based on their rollback candidacy"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "DeploymentPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Deployment"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "DeploymentPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "CertCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Cert",
+            "params": [
+              {
+                "name": "id",
+                "type": "String",
+                "description": "The cert id"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "EventCollection",
+        "fields": [
+          {
+            "name": "page",
+            "type": "EventPage",
+            "params": [
+              {
+                "name": "limit",
+                "type": "Int",
+                "description": "Maximum number of items which may be returned."
+              },
+              {
+                "name": "since",
+                "type": "String",
+                "description": "Timestamp to only include items created since then."
+              },
+              {
+                "name": "until",
+                "type": "String",
+                "description": "Timestamp to only include items created until then."
+              },
+              {
+                "name": "types",
+                "type": "String",
+                "description": "Comma-delimited list of event \\\"types\\\" to filter the results by."
+              },
+              {
+                "name": "userId",
+                "type": "String",
+                "description": "When retrieving events for a Team, the `userId` parameter may be specified to filter events generated by a specific member of the Team."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "EventPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Event"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "EventPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "AliasCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Alias",
+            "params": [
+              {
+                "name": "from",
+                "type": "Int",
+                "description": "Get the alias only if it was created after the provided timestamp"
+              },
+              {
+                "name": "idOrAlias",
+                "type": "String",
+                "description": "The alias or alias ID to be retrieved"
+              },
+              {
+                "name": "projectId",
+                "type": "String",
+                "description": "Get the alias only if it is assigned to the provided project ID"
+              },
+              {
+                "name": "since",
+                "type": "Int",
+                "description": "Get the alias only if it was created after this JavaScript timestamp"
+              },
+              {
+                "name": "until",
+                "type": "Int",
+                "description": "Get the alias only if it was created before this JavaScript timestamp"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "AliasPage",
+            "params": [
+              {
+                "name": "domain",
+                "type": "String",
+                "description": "Get only aliases of the given domain name"
+              },
+              {
+                "name": "from",
+                "type": "Int",
+                "description": "Get only aliases created after the provided timestamp"
+              },
+              {
+                "name": "limit",
+                "type": "Int",
+                "description": "Maximum number of aliases to list from a request"
+              },
+              {
+                "name": "projectId",
+                "type": "String",
+                "description": "Filter aliases from the given `projectId`"
+              },
+              {
+                "name": "since",
+                "type": "Int",
+                "description": "Get aliases created after this JavaScript timestamp"
+              },
+              {
+                "name": "until",
+                "type": "Int",
+                "description": "Get aliases created before this JavaScript timestamp"
+              },
+              {
+                "name": "rollbackDeploymentId",
+                "type": "String",
+                "description": "Get aliases that would be rolled back for the given deployment"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "AliasPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Alias"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "AliasPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "FileCollection",
+        "fields": [],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "UserCollection",
+        "fields": [],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "DomainCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Domain",
+            "params": [
+              {
+                "name": "domain",
+                "type": "String",
+                "description": "The name of the domain."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "DomainPage",
+            "params": [
+              {
+                "name": "limit",
+                "type": "Int",
+                "description": "Maximum number of domains to list from a request."
+              },
+              {
+                "name": "since",
+                "type": "Int",
+                "description": "Get domains created after this JavaScript timestamp."
+              },
+              {
+                "name": "until",
+                "type": "Int",
+                "description": "Get domains created before this JavaScript timestamp."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "DomainPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Domain"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "DomainPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "SecretCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Secret",
+            "params": [
+              {
+                "name": "idOrName",
+                "type": "String",
+                "description": "The name or the unique identifier to which the secret belongs to."
+              },
+              {
+                "name": "decrypt",
+                "type": "String",
+                "description": "Whether to try to decrypt the value of the secret. Only works if `decryptable` has been set to `true` when the secret was created."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "SecretPage",
+            "params": [
+              {
+                "name": "id",
+                "type": "String",
+                "description": "Filter out secrets based on comma separated secret ids."
+              },
+              {
+                "name": "projectId",
+                "type": "String",
+                "description": "Filter out secrets that belong to a project."
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "SecretPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Secret"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "SecretPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "ProjectCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Project",
+            "params": [
+              {
+                "name": "idOrName",
+                "type": "String",
+                "description": "The unique project identifier or the project name"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "ProjectPage",
+            "params": [
+              {
+                "name": "from",
+                "type": "String",
+                "description": "Query only projects updated after the given timestamp"
+              },
+              {
+                "name": "gitForkProtection",
+                "type": "String",
+                "description": "Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed"
+              },
+              {
+                "name": "limit",
+                "type": "String",
+                "description": "Limit the number of projects returned"
+              },
+              {
+                "name": "search",
+                "type": "String",
+                "description": "Search projects by the name field"
+              },
+              {
+                "name": "repo",
+                "type": "String",
+                "description": "Filter results by repo. Also used for project count"
+              },
+              {
+                "name": "repoId",
+                "type": "String",
+                "description": "Filter results by Repository ID."
+              },
+              {
+                "name": "repoUrl",
+                "type": "String",
+                "description": "Filter results by Repository URL."
+              },
+              {
+                "name": "excludeRepos",
+                "type": "String",
+                "description": "Filter results by excluding those projects that belong to a repo"
+              },
+              {
+                "name": "edgeConfigId",
+                "type": "String",
+                "description": "Filter results by connected Edge Config ID"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "ProjectPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Project"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "ProjectPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "VerifyCollection",
+        "fields": [
+          {
+            "name": "page",
+            "type": "VerifyPage",
+            "params": [
+              {
+                "name": "email",
+                "type": "String",
+                "description": "Email to verify the login."
+              },
+              {
+                "name": "token",
+                "type": "String",
+                "description": "The token returned when the login was requested."
+              },
+              {
+                "name": "tokenName",
+                "type": "String",
+                "description": "The desired name for the token. It will be displayed on the user account details."
+              },
+              {
+                "name": "ssoUserId",
+                "type": "String",
+                "description": "The SAML Profile ID, when connecting a SAML Profile to a Team member for the first time."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "VerifyPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Verify"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "VerifyPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "IntegrationCollection",
+        "fields": [],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "TeamCollection",
+        "fields": [
+          {
+            "name": "one",
+            "type": "Team",
+            "params": [
+              {
+                "name": "slug",
+                "type": "String"
+              },
+              {
+                "name": "teamId",
+                "type": "String",
+                "description": "The Team identifier or slug to perform the request on behalf of."
+              }
+            ]
+          },
+          {
+            "name": "page",
+            "type": "TeamPage",
+            "params": [
+              {
+                "name": "limit",
+                "type": "Int",
+                "description": "Maximum number of Teams which may be returned."
+              },
+              {
+                "name": "since",
+                "type": "Int",
+                "description": "Timestamp (in milliseconds) to only include Teams created since then."
+              },
+              {
+                "name": "until",
+                "type": "Int",
+                "description": "Timestamp (in milliseconds) to only include Teams created until then."
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "events": []
+      },
+      {
+        "name": "TeamPage",
+        "fields": [
+          {
+            "name": "items",
+            "type": "List",
+            "ofType": "Team"
+          },
+          {
+            "name": "next",
+            "type": "Ref",
+            "ofType": "TeamPage"
+          }
+        ],
+        "actions": [],
+        "events": []
+      }
+    ]
+  },
+  "dependencies": {
+    "http": "http:"
+  }
+}
