@@ -96,7 +96,21 @@ export const Deployment = {
     team: async ({ obj }) => {
         const val = obj["team"];
         return typeof val === "string" ? val : JSON.stringify(val);
-    }
+    },
+    promoteToProduction: async ({ self }) => {
+        const { idOrUrl } = self.$argsAt(root.deployments.one);
+        const res = await api("GET", `v13/deployments/${idOrUrl}`);
+        const { gitSource, name } = await res.json();
+    
+        if(!gitSource) {
+            throw new Error("Only Deployments created via Git can be promoted to production.");
+        }
+        await api("POST", "v13/deployments", null, JSON.stringify({
+            name,
+            target: "production",
+            gitSource,
+        }));
+    },
 };
 export const Cert = {
     gref: ({ obj, self }) => {

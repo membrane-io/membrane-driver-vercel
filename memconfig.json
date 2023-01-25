@@ -299,7 +299,12 @@
             "type": "Int"
           }
         ],
-        "actions": [],
+        "actions": [
+          { 
+            "name": "promoteToProduction",
+            "type": "Void"
+          }
+        ],
         "events": []
       },
       {
