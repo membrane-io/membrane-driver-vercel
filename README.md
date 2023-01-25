@@ -21,8 +21,8 @@ Get projects
   },
   {
     "id": "prj_YdrxTD8laMQaT2vwIyGraEqlIAMz",
-    "name": "slack-bot",
-    "framework": vue
+    "name": "bot-page",
+    "framework": "nextjs"
   },
   {
     "id": "prj_8KpB2fsI1hua79xGhB2oqMp70ptY",
