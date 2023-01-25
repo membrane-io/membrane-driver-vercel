@@ -1,3 +1,44 @@
+# Vercel Driver
+
+This [driver](https://membrane.io) lets you interact with the [vercel](https://vercel.com) API.
+
+## Setup
+
+$~~~~$ `mctl action 'vercel:configure(token:"<AccessToken>"'`
+
+## Example Query
+
+Get projects
+
+`mctl query 'vercel:projects.page.items' '{ id name framework }'`
+
+```
+[
+  {
+    "id": "prj_5UwGzhAqU4W0aIE2eO35XB1lcQtO",
+    "name": "site-prod",
+    "framework": "nextjs"
+  },
+  {
+    "id": "prj_YdrxTD8laMQaT2vwIyGraEqlIAMz",
+    "name": "slack-bot",
+    "framework": vue
+  },
+  {
+    "id": "prj_8KpB2fsI1hua79xGhB2oqMp70ptY",
+    "name": "personal-site",
+    "framework": "nextjs"
+  },
+  ...
+]
+```
+
+## Example Action
+
+Promote deployment to Production
+
+`mctl action 'vercel:deployments.one(idOrUrl:"dpl_G2hcxx3mppABtomgwTB9ornkCUDs").promoteToProduction'`
+
 # Schema
 
 ### Types

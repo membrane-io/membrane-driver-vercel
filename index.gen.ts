@@ -1,6 +1,7 @@
 import { state, root, nodes } from "membrane";
 import fetch from "node-fetch";
 import { getItemsFromResponse, getNextPageRef, getSelfGref } from "./index.custom";
+
 async function api(method: string, path: string, query?: any, body?: string) {
     if (!state.token) {
         throw new Error("You must first invoke the configure action with an API token");
@@ -20,7 +21,15 @@ async function api(method: string, path: string, query?: any, body?: string) {
     };
     return await fetch(url, req);
 }
+
 export const Root = {
+    status() {
+        if (!state.token) {
+            return "Please [configure the Vercel token](https://vercel.com/account/tokens)";
+        } else {
+            return `Ready`;
+        }
+    },
     artifacts: () => ({}),
     deployments: () => ({}),
     certs: () => ({}),

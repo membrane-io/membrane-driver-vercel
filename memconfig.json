@@ -55,6 +55,10 @@
           {
             "name": "teams",
             "type": "TeamCollection"
+          },
+          {
+            "name": "status",
+            "type": "String"
           }
         ],
         "actions": [
