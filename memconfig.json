@@ -1,4 +1,24 @@
 {
+  "expressions": {
+    "project": {
+      "description": "Project",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/[^/]+$"
+    },
+    "domain": {
+      "description": "Domain",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/domains/[^/]+$"
+    },
+    "deployment": {
+      "description": "Deployment",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/[^/]+/[^/]+$"
+    }
+  },
   "schema": {
     "types": [
       {
@@ -59,6 +79,27 @@
           {
             "name": "status",
             "type": "String"
+          },
+          {
+            "name": "parse",
+            "type": "List",
+            "hints": {
+              "hidden": true
+            },
+            "ofType": {
+              "type": "Ref",
+              "ofType": "Project"
+            },
+            "params": [
+              {
+                "name": "name",
+                "type": "String"
+              },
+              {
+                "name": "value",
+                "type": "String"
+              }
+            ]
           }
         ],
         "actions": [

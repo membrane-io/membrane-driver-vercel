@@ -10,9 +10,9 @@ $~~~~$ `mctl action 'vercel:configure(token:"<AccessToken>"'`
 
 Get projects
 
-`mctl query 'vercel:projects.page.items' '{ id name framework }'`
+$~~~~$ `mctl query 'vercel:projects.page.items' '{ id name framework }'`
 
-```
+```json
 [
   {
     "id": "prj_5UwGzhAqU4W0aIE2eO35XB1lcQtO",

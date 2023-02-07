@@ -30,6 +30,29 @@ export const Root = {
             return `Ready`;
         }
     },
+    parse({ self, args: { name, value } }) {
+        switch (name) {
+          case "project": {
+            const url = new URL(value);
+            const [,, idOrName] = url.pathname.split("/");
+             
+            return [root.projects.one({ idOrName })];
+          }
+          case "domain": {
+            const url = new URL(value);
+            const [,,, domain] = url.pathname.split("/");
+             
+            return [root.domains.one({ domain })];
+          }
+          case "deployment": {
+            const url = new URL(value);
+            const [,,, id] = url.pathname.split("/");
+
+            return [root.deployments.one({ idOrUrl: `dpl_${id}` })];
+          }
+        }
+        return [];
+    },
     artifacts: () => ({}),
     deployments: () => ({}),
     certs: () => ({}),
