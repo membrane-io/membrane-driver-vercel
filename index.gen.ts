@@ -1,6 +1,7 @@
 import { state, root, nodes } from "membrane";
 import fetch from "node-fetch";
 import { getItemsFromResponse, getNextPageRef, getSelfGref } from "./index.custom";
+
 async function api(method: string, path: string, query?: any, body?: string) {
     if (!state.token) {
         throw new Error("You must first invoke the configure action with an API token");
@@ -20,7 +21,38 @@ async function api(method: string, path: string, query?: any, body?: string) {
     };
     return await fetch(url, req);
 }
+
 export const Root = {
+    status() {
+        if (!state.token) {
+            return "Please [configure the Vercel token](https://vercel.com/account/tokens)";
+        } else {
+            return `Ready`;
+        }
+    },
+    parse({ self, args: { name, value } }) {
+        switch (name) {
+          case "project": {
+            const url = new URL(value);
+            const [,, idOrName] = url.pathname.split("/");
+             
+            return [root.projects.one({ idOrName })];
+          }
+          case "domain": {
+            const url = new URL(value);
+            const [,,, domain] = url.pathname.split("/");
+             
+            return [root.domains.one({ domain })];
+          }
+          case "deployment": {
+            const url = new URL(value);
+            const [,,, id] = url.pathname.split("/");
+
+            return [root.deployments.one({ idOrUrl: `dpl_${id}` })];
+          }
+        }
+        return [];
+    },
     artifacts: () => ({}),
     deployments: () => ({}),
     certs: () => ({}),
@@ -96,7 +128,21 @@ export const Deployment = {
     team: async ({ obj }) => {
         const val = obj["team"];
         return typeof val === "string" ? val : JSON.stringify(val);
-    }
+    },
+    promoteToProduction: async ({ self }) => {
+        const { idOrUrl } = self.$argsAt(root.deployments.one);
+        const res = await api("GET", `v13/deployments/${idOrUrl}`);
+        const { gitSource, name } = await res.json();
+    
+        if(!gitSource) {
+            throw new Error("Only Deployments created via Git can be promoted to production.");
+        }
+        await api("POST", "v13/deployments", null, JSON.stringify({
+            name,
+            target: "production",
+            gitSource,
+        }));
+    },
 };
 export const Cert = {
     gref: ({ obj, self }) => {

@@ -1,8 +1,29 @@
 {
+  "expressions": {
+    "project": {
+      "description": "Project",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/[^/]+$"
+    },
+    "domain": {
+      "description": "Domain",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/domains/[^/]+$"
+    },
+    "deployment": {
+      "description": "Deployment",
+      "type": "url",
+      "searchIn": "https://vercel.com",
+      "regex": "https://vercel.com/[^/]+/[^/]+/[^/]+$"
+    }
+  },
   "schema": {
     "types": [
       {
         "name": "Root",
+        "description": "Connect to Vercel and manage your projects.",
         "fields": [
           {
             "name": "artifacts",
@@ -55,6 +76,31 @@
           {
             "name": "teams",
             "type": "TeamCollection"
+          },
+          {
+            "name": "status",
+            "type": "String"
+          },
+          {
+            "name": "parse",
+            "type": "List",
+            "hints": {
+              "hidden": true
+            },
+            "ofType": {
+              "type": "Ref",
+              "ofType": "Project"
+            },
+            "params": [
+              {
+                "name": "name",
+                "type": "String"
+              },
+              {
+                "name": "value",
+                "type": "String"
+              }
+            ]
           }
         ],
         "actions": [
@@ -299,7 +345,12 @@
             "type": "Int"
           }
         ],
-        "actions": [],
+        "actions": [
+          { 
+            "name": "promoteToProduction",
+            "type": "Void"
+          }
+        ],
         "events": []
       },
       {
