@@ -346,7 +346,7 @@
           }
         ],
         "actions": [
-          { 
+          {
             "name": "promoteToProduction",
             "type": "Void"
           }
@@ -773,22 +773,26 @@
               {
                 "name": "x-artifact-client-ci",
                 "type": "String",
-                "description": "The continuous integration or delivery environment where this artifact is downloaded."
+                "description": "The continuous integration or delivery environment where this artifact is downloaded.",
+                "optional": true
               },
               {
                 "name": "x-artifact-client-interactive",
                 "type": "Int",
-                "description": "1 if the client is an interactive shell. Otherwise 0"
+                "description": "1 if the client is an interactive shell. Otherwise 0",
+                "optional": true
               },
               {
                 "name": "hash",
                 "type": "String",
-                "description": "The artifact hash"
+                "description": "The artifact hash",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -811,7 +815,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
@@ -822,62 +827,74 @@
               {
                 "name": "app",
                 "type": "String",
-                "description": "Name of the deployment."
+                "description": "Name of the deployment.",
+                "optional": true
               },
               {
                 "name": "from",
                 "type": "Int",
-                "description": "Gets the deployment created after this Date timestamp. (default: current time)"
+                "description": "Gets the deployment created after this Date timestamp. (default: current time)",
+                "optional": true
               },
               {
                 "name": "limit",
                 "type": "Int",
-                "description": "Maximum number of deployments to list from a request."
+                "description": "Maximum number of deployments to list from a request.",
+                "optional": true
               },
               {
                 "name": "projectId",
                 "type": "String",
-                "description": "Filter deployments from the given `projectId`."
+                "description": "Filter deployments from the given `projectId`.",
+                "optional": true
               },
               {
                 "name": "target",
                 "type": "String",
-                "description": "Filter deployments based on the environment."
+                "description": "Filter deployments based on the environment.",
+                "optional": true
               },
               {
                 "name": "to",
                 "type": "Int",
-                "description": "Gets the deployment created before this Date timestamp. (default: current time)"
+                "description": "Gets the deployment created before this Date timestamp. (default: current time)",
+                "optional": true
               },
               {
                 "name": "users",
                 "type": "String",
-                "description": "Filter out deployments based on users who have created the deployment."
+                "description": "Filter out deployments based on users who have created the deployment.",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "Int",
-                "description": "Get Deployments created after this JavaScript timestamp."
+                "description": "Get Deployments created after this JavaScript timestamp.",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "Int",
-                "description": "Get Deployments created before this JavaScript timestamp."
+                "description": "Get Deployments created before this JavaScript timestamp.",
+                "optional": true
               },
               {
                 "name": "state",
                 "type": "String",
-                "description": "Filter deployments based on their state (`BUILDING`, `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`)"
+                "description": "Filter deployments based on their state (`BUILDING`, `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`)",
+                "optional": true
               },
               {
                 "name": "rollbackCandidate",
                 "type": "Boolean",
-                "description": "Filter deployments based on their rollback candidacy"
+                "description": "Filter deployments based on their rollback candidacy",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -917,7 +934,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -935,32 +953,38 @@
               {
                 "name": "limit",
                 "type": "Int",
-                "description": "Maximum number of items which may be returned."
+                "description": "Maximum number of items which may be returned.",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "String",
-                "description": "Timestamp to only include items created since then."
+                "description": "Timestamp to only include items created since then.",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "String",
-                "description": "Timestamp to only include items created until then."
+                "description": "Timestamp to only include items created until then.",
+                "optional": true
               },
               {
                 "name": "types",
                 "type": "String",
-                "description": "Comma-delimited list of event \\\"types\\\" to filter the results by."
+                "description": "Comma-delimited list of event \\\"types\\\" to filter the results by.",
+                "optional": true
               },
               {
                 "name": "userId",
                 "type": "String",
-                "description": "When retrieving events for a Team, the `userId` parameter may be specified to filter events generated by a specific member of the Team."
+                "description": "When retrieving events for a Team, the `userId` parameter may be specified to filter events generated by a specific member of the Team.",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -995,27 +1019,32 @@
               {
                 "name": "from",
                 "type": "Int",
-                "description": "Get the alias only if it was created after the provided timestamp"
+                "description": "Get the alias only if it was created after the provided timestamp",
+                "optional": true
               },
               {
                 "name": "idOrAlias",
                 "type": "String",
-                "description": "The alias or alias ID to be retrieved"
+                "description": "The alias or alias ID to be retrieved",
+                "optional": false
               },
               {
                 "name": "projectId",
                 "type": "String",
-                "description": "Get the alias only if it is assigned to the provided project ID"
+                "description": "Get the alias only if it is assigned to the provided project ID",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "Int",
-                "description": "Get the alias only if it was created after this JavaScript timestamp"
+                "description": "Get the alias only if it was created after this JavaScript timestamp",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "Int",
-                "description": "Get the alias only if it was created before this JavaScript timestamp"
+                "description": "Get the alias only if it was created before this JavaScript timestamp",
+                "optional": true
               },
               {
                 "name": "teamId",
@@ -1031,42 +1060,50 @@
               {
                 "name": "domain",
                 "type": "String",
-                "description": "Get only aliases of the given domain name"
+                "description": "Get only aliases of the given domain name",
+                "optional": true
               },
               {
                 "name": "from",
                 "type": "Int",
-                "description": "Get only aliases created after the provided timestamp"
+                "description": "Get only aliases created after the provided timestamp",
+                "optional": true
               },
               {
                 "name": "limit",
                 "type": "Int",
-                "description": "Maximum number of aliases to list from a request"
+                "description": "Maximum number of aliases to list from a request",
+                "optional": true
               },
               {
                 "name": "projectId",
                 "type": "String",
-                "description": "Filter aliases from the given `projectId`"
+                "description": "Filter aliases from the given `projectId`",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "Int",
-                "description": "Get aliases created after this JavaScript timestamp"
+                "description": "Get aliases created after this JavaScript timestamp",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "Int",
-                "description": "Get aliases created before this JavaScript timestamp"
+                "description": "Get aliases created before this JavaScript timestamp",
+                "optional": true
               },
               {
                 "name": "rollbackDeploymentId",
                 "type": "String",
-                "description": "Get aliases that would be rolled back for the given deployment"
+                "description": "Get aliases that would be rolled back for the given deployment",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -1129,22 +1166,26 @@
               {
                 "name": "limit",
                 "type": "Int",
-                "description": "Maximum number of domains to list from a request."
+                "description": "Maximum number of domains to list from a request.",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "Int",
-                "description": "Get domains created after this JavaScript timestamp."
+                "description": "Get domains created after this JavaScript timestamp.",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "Int",
-                "description": "Get domains created before this JavaScript timestamp."
+                "description": "Get domains created before this JavaScript timestamp.",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -1179,17 +1220,20 @@
               {
                 "name": "idOrName",
                 "type": "String",
-                "description": "The name or the unique identifier to which the secret belongs to."
+                "description": "The name or the unique identifier to which the secret belongs to.",
+                "optional": true
               },
               {
                 "name": "decrypt",
                 "type": "String",
-                "description": "Whether to try to decrypt the value of the secret. Only works if `decryptable` has been set to `true` when the secret was created."
+                "description": "Whether to try to decrypt the value of the secret. Only works if `decryptable` has been set to `true` when the secret was created.",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
@@ -1200,17 +1244,20 @@
               {
                 "name": "id",
                 "type": "String",
-                "description": "Filter out secrets based on comma separated secret ids."
+                "description": "Filter out secrets based on comma separated secret ids.",
+                "optional": true
               },
               {
                 "name": "projectId",
                 "type": "String",
-                "description": "Filter out secrets that belong to a project."
+                "description": "Filter out secrets that belong to a project.",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -1250,7 +1297,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
@@ -1266,47 +1314,56 @@
               {
                 "name": "gitForkProtection",
                 "type": "String",
-                "description": "Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed"
+                "description": "Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed",
+                "optional": true
               },
               {
                 "name": "limit",
                 "type": "String",
-                "description": "Limit the number of projects returned"
+                "description": "Limit the number of projects returned",
+                "optional": true
               },
               {
                 "name": "search",
                 "type": "String",
-                "description": "Search projects by the name field"
+                "description": "Search projects by the name field",
+                "optional": true
               },
               {
                 "name": "repo",
                 "type": "String",
-                "description": "Filter results by repo. Also used for project count"
+                "description": "Filter results by repo. Also used for project count",
+                "optional": true
               },
               {
                 "name": "repoId",
                 "type": "String",
-                "description": "Filter results by Repository ID."
+                "description": "Filter results by Repository ID.",
+                "optional": true
               },
               {
                 "name": "repoUrl",
                 "type": "String",
-                "description": "Filter results by Repository URL."
+                "description": "Filter results by Repository URL.",
+                "optional": true
               },
               {
                 "name": "excludeRepos",
                 "type": "String",
-                "description": "Filter results by excluding those projects that belong to a repo"
+                "description": "Filter results by excluding those projects that belong to a repo",
+                "optional": true
               },
               {
                 "name": "edgeConfigId",
                 "type": "String",
-                "description": "Filter results by connected Edge Config ID"
+                "description": "Filter results by connected Edge Config ID",
+                "optional": true
               },
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           }
@@ -1341,22 +1398,26 @@
               {
                 "name": "email",
                 "type": "String",
-                "description": "Email to verify the login."
+                "description": "Email to verify the login.",
+                "optional": true
               },
               {
                 "name": "token",
                 "type": "String",
-                "description": "The token returned when the login was requested."
+                "description": "The token returned when the login was requested.",
+                "optional": true
               },
               {
                 "name": "tokenName",
                 "type": "String",
-                "description": "The desired name for the token. It will be displayed on the user account details."
+                "description": "The desired name for the token. It will be displayed on the user account details.",
+                "optional": true
               },
               {
                 "name": "ssoUserId",
                 "type": "String",
-                "description": "The SAML Profile ID, when connecting a SAML Profile to a Team member for the first time."
+                "description": "The SAML Profile ID, when connecting a SAML Profile to a Team member for the first time.",
+                "optional": true
               }
             ]
           }
@@ -1401,7 +1462,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
@@ -1412,17 +1474,20 @@
               {
                 "name": "limit",
                 "type": "Int",
-                "description": "Maximum number of Teams which may be returned."
+                "description": "Maximum number of Teams which may be returned.",
+                "optional": true
               },
               {
                 "name": "since",
                 "type": "Int",
-                "description": "Timestamp (in milliseconds) to only include Teams created since then."
+                "description": "Timestamp (in milliseconds) to only include Teams created since then.",
+                "optional": true
               },
               {
                 "name": "until",
                 "type": "Int",
-                "description": "Timestamp (in milliseconds) to only include Teams created until then."
+                "description": "Timestamp (in milliseconds) to only include Teams created until then.",
+                "optional": true
               }
             ]
           }
