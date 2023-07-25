@@ -101,6 +101,10 @@
                 "type": "String"
               }
             ]
+          },
+          {
+            "name": "tests",
+            "type": "Tests"
           }
         ],
         "actions": [
@@ -1309,7 +1313,8 @@
               {
                 "name": "from",
                 "type": "String",
-                "description": "Query only projects updated after the given timestamp"
+                "description": "Query only projects updated after the given timestamp",
+                "optional": true
               },
               {
                 "name": "gitForkProtection",
@@ -1511,6 +1516,23 @@
         ],
         "actions": [],
         "events": []
+      },
+      {
+        "name": "Tests",
+        "actions": [
+          {
+            "name": "testGetDeployments",
+            "type": "Boolean"
+          },
+          {
+            "name": "testGetProjects",
+            "type": "Boolean"
+          },
+          {
+            "name": "testGetAliases",
+            "type": "Boolean"
+          }
+        ]
       }
     ]
   },

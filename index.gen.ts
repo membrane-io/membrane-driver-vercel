@@ -68,6 +68,21 @@ export const Root = {
     teams: () => ({}),
     configure: ({ args: { token } }) => {
         state.token = token;
+    },
+    tests: () => ({}),
+};
+export const Tests = {
+    testGetDeployments: async () => {
+        const items = await root.deployments.page.items.$query(`{ name }`);
+        return Array.isArray(items) && (items.length === 0 || items.length > 0);
+    },
+    testGetProjects: async () => {
+        const items = await root.projects.page.items.$query(`{ name }`);
+        return Array.isArray(items) && (items.length === 0 || items.length > 0);
+    },
+    testGetAliases: async () => {
+        const items = await root.aliases.page.items.$query(`{ alias }`);
+        return Array.isArray(items) && (items.length === 0 || items.length > 0);
     }
 };
 export const Artifact = {
