@@ -74,15 +74,15 @@ export const Root = {
 export const Tests = {
     testGetDeployments: async () => {
         const items = await root.deployments.page.items.$query(`{ name }`);
-        return Array.isArray(items) && (items.length === 0 || items.length > 0);
+        return Array.isArray(items);
     },
     testGetProjects: async () => {
         const items = await root.projects.page.items.$query(`{ name }`);
-        return Array.isArray(items) && (items.length === 0 || items.length > 0);
+        return Array.isArray(items);
     },
     testGetAliases: async () => {
         const items = await root.aliases.page.items.$query(`{ alias }`);
-        return Array.isArray(items) && (items.length === 0 || items.length > 0);
+        return Array.isArray(items);
     }
 };
 export const Artifact = {
