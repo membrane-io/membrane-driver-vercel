@@ -4,7 +4,7 @@ export function getItemsFromResponse(
   json: any,
   path: string,
   args: any,
-  self: Gref<any>
+  self: any
 ): any[] {
   const last = path.split("/").pop();
   return json[last!];
@@ -22,7 +22,7 @@ export function getNextPageRef(
   return null;
 }
 
-export function getSelfGref(obj: any, typeName, self): Gref<any> | undefined {
+export function getSelfGref(obj: any, typeName, self): any | undefined {
   switch (typeName) {
     case "Project":
       return root.projects.one({ idOrName: obj.name }) as any;

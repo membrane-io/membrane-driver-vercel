@@ -1053,7 +1053,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
@@ -1159,7 +1160,8 @@
               {
                 "name": "teamId",
                 "type": "String",
-                "description": "The Team identifier or slug to perform the request on behalf of."
+                "description": "The Team identifier or slug to perform the request on behalf of.",
+                "optional": true
               }
             ]
           },
