@@ -27,59 +27,73 @@
         "fields": [
           {
             "name": "artifacts",
-            "type": "ArtifactCollection"
+            "type": "ArtifactCollection",
+            "description": "A collection of artifacts associated with the program."
           },
           {
             "name": "deployments",
-            "type": "DeploymentCollection"
+            "type": "DeploymentCollection",
+            "description": "A collection of deployments that have been made within the program."
           },
           {
             "name": "certs",
-            "type": "CertCollection"
+            "type": "CertCollection",
+            "description": "A collection of SSL certificates available for the program's domains."
           },
           {
             "name": "events",
-            "type": "EventCollection"
+            "type": "EventCollection",
+            "description": "A stream of events that have occurred within the program."
           },
           {
             "name": "aliases",
-            "type": "AliasCollection"
+            "type": "AliasCollection",
+            "description": "A collection of aliases that have been assigned to deployments."
           },
           {
             "name": "files",
-            "type": "FileCollection"
+            "type": "FileCollection",
+            "description": "A collection of files associated with the program's deployments."
           },
           {
             "name": "users",
-            "type": "UserCollection"
+            "type": "UserCollection",
+            "description": "A collection of users that have access to the program."
           },
           {
             "name": "domains",
-            "type": "DomainCollection"
+            "type": "DomainCollection",
+            "description": "A collection of domains that have been registered or configured within the program."
           },
           {
             "name": "secrets",
-            "type": "SecretCollection"
+            "type": "SecretCollection",
+            "description": "A collection of secrets that are used for environment variables or other sensitive data."
           },
           {
             "name": "projects",
-            "type": "ProjectCollection"
+            "type": "ProjectCollection",
+            "description": "A collection of projects that have been created within the program."
           },
           {
             "name": "verifies",
-            "type": "VerifyCollection"
+            "type": "VerifyCollection",
+            "description": "A collection of verification objects used for user authentication and authorization."
           },
           {
             "name": "integrations",
-            "type": "IntegrationCollection"
+            "type": "IntegrationCollection",
+            "description": "A collection of integrations that have been set up with external services."
           },
           {
             "name": "teams",
-            "type": "TeamCollection"
+            "type": "TeamCollection",
+            "description": "A collection of teams that have been created to collaborate on projects."
           },
           {
             "name": "status",
-            "type": "String"
+            "type": "String",
+            "description": "The current status of the program."
           },
           {
             "name": "parse",
@@ -100,11 +114,13 @@
                 "name": "value",
                 "type": "String"
               }
-            ]
+            ],
+            "description": "A utility to parse project-related information."
           },
           {
             "name": "tests",
-            "type": "Tests"
+            "type": "Tests",
+            "description": "A set of tests to validate the functionality of deployments, projects, and aliases."
           }
         ],
         "actions": [
