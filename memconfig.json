@@ -592,50 +592,61 @@
           {
             "name": "gref",
             "type": "Ref",
-            "ofType": "Secret"
+            "ofType": "Secret",
+            "description": "Reference to another secret"
           },
           {
             "name": "created",
-            "type": "String"
+            "type": "String",
+            "description": "Date when the secret was created"
           },
           {
             "name": "name",
             "type": "String",
             "hints": {
               "primary": true
-            }
+            },
+            "description": "Name of the secret"
           },
           {
             "name": "teamId",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the team to which the secret belongs"
           },
           {
             "name": "uid",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier of the secret"
           },
           {
             "name": "userId",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the user to whom the secret belongs"
           },
           {
             "name": "value",
-            "type": "String"
+            "type": "String",
+            "description": "Value of the secret"
           },
           {
             "name": "createdAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp of when the secret was created"
           },
           {
             "name": "projectId",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the project to which the secret belongs"
           },
           {
             "name": "decryptable",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Indicates whether the secret is decryptable"
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a secret in the Vercel driver"
       },
       {
         "name": "Project",
@@ -643,164 +654,202 @@
           {
             "name": "gref",
             "type": "Ref",
-            "ofType": "Project"
+            "ofType": "Project",
+            "description": "Reference to another Vercel Project"
           },
           {
             "name": "accountId",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier for the Vercel account"
           },
           {
             "name": "analytics",
-            "type": "String"
+            "type": "String",
+            "description": "Analytics configuration for the Vercel Project"
           },
           {
             "name": "autoExposeSystemEnvs",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to automatically expose system environments"
           },
           {
             "name": "buildCommand",
-            "type": "String"
+            "type": "String",
+            "description": "Command for building the Vercel Project"
           },
           {
             "name": "commandForIgnoringBuildStep",
-            "type": "String"
+            "type": "String",
+            "description": "Command for ignoring build steps"
           },
           {
             "name": "createdAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp for the creation of the Vercel Project"
           },
           {
             "name": "devCommand",
-            "type": "String"
+            "type": "String",
+            "description": "Command for development environment setup"
           },
           {
             "name": "directoryListing",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to enable directory listing for the Vercel Project"
           },
           {
             "name": "installCommand",
-            "type": "String"
+            "type": "String",
+            "description": "Command for installing dependencies"
           },
           {
             "name": "env",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of environment variables for the Vercel Project"
           },
           {
             "name": "framework",
-            "type": "String"
+            "type": "String",
+            "description": "Framework used for the Vercel Project"
           },
           {
             "name": "gitForkProtection",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to protect against Git forking"
           },
           {
             "name": "id",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier for the Vercel Project"
           },
           {
             "name": "latestDeployments",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of latest deployments for the Vercel Project"
           },
           {
             "name": "link",
-            "type": "String"
+            "type": "String",
+            "description": "Link to the Vercel Project"
           },
           {
             "name": "name",
             "type": "String",
             "hints": {
               "primary": true
-            }
+            },
+            "description": "Name of the Vercel Project, with primary hint"
           },
           {
             "name": "nodeVersion",
-            "type": "String"
+            "type": "String",
+            "description": "Node.js version used for the Vercel Project"
           },
           {
             "name": "outputDirectory",
-            "type": "String"
+            "type": "String",
+            "description": "Output directory for the Vercel Project"
           },
           {
             "name": "passwordProtection",
-            "type": "String"
+            "type": "String",
+            "description": "Password protection configuration for the Vercel Project"
           },
           {
             "name": "publicSource",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to indicate if the source is public for the Vercel Project"
           },
           {
             "name": "rootDirectory",
-            "type": "String"
+            "type": "String",
+            "description": "Root directory for the Vercel Project"
           },
           {
             "name": "serverlessFunctionRegion",
-            "type": "String"
+            "type": "String",
+            "description": "Region for serverless functions in the Vercel Project"
           },
           {
             "name": "skipGitConnectDuringLink",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to skip Git connection during linking"
           },
           {
             "name": "sourceFilesOutsideRootDirectory",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to indicate if source files are outside the root directory of the Vercel Project"
           },
           {
             "name": "ssoProtection",
-            "type": "String"
+            "type": "String",
+            "description": "Configuration for Single Sign-On protection"
           },
           {
             "name": "targets",
-            "type": "String"
+            "type": "String",
+            "description": "Targets for the Vercel Project"
           },
           {
             "name": "transferCompletedAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp for the completion of project transfer"
           },
           {
             "name": "transferStartedAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp for the start of project transfer"
           },
           {
             "name": "transferToAccountId",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier for the account to which the project is transferred"
           },
           {
             "name": "transferredFromAccountId",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier for the account from which the project is transferred"
           },
           {
             "name": "updatedAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp for the last update of the Vercel Project"
           },
           {
             "name": "live",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to indicate if the Vercel Project is live"
           },
           {
             "name": "enablePreviewFeedback",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to enable preview feedback for the Vercel Project"
           },
           {
             "name": "permissions",
-            "type": "String"
+            "type": "String",
+            "description": "Permissions configuration for the Vercel Project"
           },
           {
             "name": "lastRollbackTarget",
-            "type": "String"
+            "type": "String",
+            "description": "Target for the last rollback of the Vercel Project"
           },
           {
             "name": "hasFloatingAliases",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Flag to indicate if the Vercel Project has floating aliases"
           },
           {
             "name": "protectionBypass",
-            "type": "String"
+            "type": "String",
+            "description": "Configuration for protection bypass in the Vercel Project"
           }
         ],
         "actions": [],
