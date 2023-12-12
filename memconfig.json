@@ -147,7 +147,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Root type for Vercel artifacts"
       },
       {
         "name": "Deployment",
@@ -155,220 +156,267 @@
           {
             "name": "gref",
             "type": "Ref",
-            "ofType": "Deployment"
+            "ofType": "Deployment",
+            "description": "Reference to another Vercel deployment."
           },
           {
             "name": "aliasAssignedAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the alias was assigned."
           },
           {
             "name": "build",
-            "type": "String"
+            "type": "String",
+            "description": "Build details for the deployment."
           },
           {
             "name": "builds",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of build details for the deployment."
           },
           {
             "name": "createdIn",
-            "type": "String"
+            "type": "String",
+            "description": "Location where the deployment was created."
           },
           {
             "name": "env",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of environment variables for the deployment."
           },
           {
             "name": "functions",
-            "type": "String"
+            "type": "String",
+            "description": "Functions associated with the deployment."
           },
           {
             "name": "inspectorUrl",
-            "type": "String"
+            "type": "String",
+            "description": "URL for inspecting the deployment."
           },
           {
             "name": "meta",
-            "type": "String"
+            "type": "String",
+            "description": "Metadata associated with the deployment."
           },
           {
             "name": "monorepoManager",
-            "type": "String"
+            "type": "String",
+            "description": "Monorepo manager for the deployment."
           },
           {
             "name": "name",
             "type": "String",
             "hints": {
               "primary": true
-            }
+            },
+            "description": "Name of the deployment with primary hint."
           },
           {
             "name": "ownerId",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the deployment owner."
           },
           {
             "name": "plan",
-            "type": "String"
+            "type": "String",
+            "description": "Plan details for the deployment."
           },
           {
             "name": "projectId",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the deployment project."
           },
           {
             "name": "routes",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of routes for the deployment."
           },
           {
             "name": "alias",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of aliases for the deployment."
           },
           {
             "name": "aliasAssigned",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Boolean flag indicating if an alias is assigned."
           },
           {
             "name": "aliasError",
-            "type": "String"
+            "type": "String",
+            "description": "Error message related to alias assignment."
           },
           {
             "name": "aliasFinal",
-            "type": "String"
+            "type": "String",
+            "description": "Final alias assigned to the deployment."
           },
           {
             "name": "aliasWarning",
-            "type": "String"
+            "type": "String",
+            "description": "Warning message related to alias assignment."
           },
           {
             "name": "automaticAliases",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of automatically assigned aliases."
           },
           {
             "name": "bootedAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the deployment was booted."
           },
           {
             "name": "buildErrorAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when build error occurred."
           },
           {
             "name": "buildingAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the deployment was being built."
           },
           {
             "name": "canceledAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the deployment was canceled."
           },
           {
             "name": "checksState",
-            "type": "String"
+            "type": "String",
+            "description": "State of deployment checks."
           },
           {
             "name": "checksConclusion",
-            "type": "String"
+            "type": "String",
+            "description": "Conclusion of deployment checks."
           },
           {
             "name": "createdAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the deployment was created."
           },
           {
             "name": "creator",
-            "type": "String"
+            "type": "String",
+            "description": "Creator of the deployment."
           },
           {
             "name": "errorCode",
-            "type": "String"
+            "type": "String",
+            "description": "Error code associated with the deployment."
           },
           {
             "name": "errorLink",
-            "type": "String"
+            "type": "String",
+            "description": "Link to the error associated with the deployment."
           },
           {
             "name": "errorMessage",
-            "type": "String"
+            "type": "String",
+            "description": "Error message associated with the deployment."
           },
           {
             "name": "errorStep",
-            "type": "String"
+            "type": "String",
+            "description": "Step at which the error occurred."
           },
           {
             "name": "gitSource",
-            "type": "String"
+            "type": "String",
+            "description": "Source of the deployment from Git."
           },
           {
             "name": "id",
-            "type": "String"
+            "type": "String",
+            "description": "ID of the deployment."
           },
           {
             "name": "lambdas",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of lambdas associated with the deployment."
           },
           {
             "name": "public",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Boolean flag indicating if the deployment is public."
           },
           {
             "name": "readyState",
-            "type": "String"
+            "type": "String",
+            "description": "State of deployment readiness."
           },
           {
             "name": "regions",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of regions for the deployment."
           },
           {
             "name": "source",
-            "type": "String"
+            "type": "String",
+            "description": "Source of the deployment."
           },
           {
             "name": "target",
-            "type": "String"
+            "type": "String",
+            "description": "Target of the deployment."
           },
           {
             "name": "team",
-            "type": "String"
+            "type": "String",
+            "description": "Team associated with the deployment."
           },
           {
             "name": "type",
-            "type": "String"
+            "type": "String",
+            "description": "Type of the deployment."
           },
           {
             "name": "url",
-            "type": "String"
+            "type": "String",
+            "description": "URL of the deployment."
           },
           {
             "name": "userAliases",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of user-assigned aliases for the deployment."
           },
           {
             "name": "version",
-            "type": "Int"
+            "type": "Int",
+            "description": "Version number of the deployment."
           }
         ],
         "actions": [
           {
             "name": "promoteToProduction",
-            "type": "Void"
+            "type": "Void",
+            "description": "Action to promote the deployment to production."
           }
         ],
         "events": []
@@ -379,34 +427,41 @@
           {
             "name": "gref",
             "type": "Ref",
-            "ofType": "Cert"
+            "ofType": "Cert",
+            "description": "Reference to another Vercel certificate"
           },
           {
             "name": "id",
-            "type": "String"
+            "type": "String",
+            "description": "Unique identifier of the Vercel certificate"
           },
           {
             "name": "createdAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the Vercel certificate was created"
           },
           {
             "name": "expiresAt",
-            "type": "Int"
+            "type": "Int",
+            "description": "Timestamp when the Vercel certificate expires"
           },
           {
             "name": "autoRenew",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Indicates whether the Vercel certificate is set to auto-renew"
           },
           {
             "name": "cns",
             "type": "List",
             "ofType": {
               "type": "String"
-            }
+            },
+            "description": "List of common names associated with the Vercel certificate"
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type Schema for handling Vercel SSL certificates."
       },
       {
         "name": "Event",
@@ -418,7 +473,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Root type for Vercel events"
       },
       {
         "name": "Alias",
@@ -485,7 +541,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing an alias in the Vercel driver."
       },
       {
         "name": "File",
@@ -509,7 +566,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Root type for Vercel User data"
       },
       {
         "name": "Domain",
@@ -525,7 +583,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a Vercel domain"
       },
       {
         "name": "Secret",
@@ -745,7 +804,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type Schema for Vercel Project"
       },
       {
         "name": "Verify",
@@ -757,7 +817,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Root of the Vercel verification process"
       },
       {
         "name": "Integration",
@@ -781,7 +842,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Root"
       },
       {
         "name": "ArtifactCollection",
@@ -920,7 +982,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of Vercel deployments."
       },
       {
         "name": "DeploymentPage",
@@ -937,7 +1000,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of Vercel deployment items"
       },
       {
         "name": "CertCollection",
@@ -961,7 +1025,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of certificates for Vercel"
       },
       {
         "name": "EventCollection",
@@ -1027,7 +1092,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a page of events."
       },
       {
         "name": "AliasCollection",
@@ -1130,7 +1196,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of aliases and alias pages"
       },
       {
         "name": "AliasPage",
@@ -1147,7 +1214,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing an alias page in Vercel"
       },
       {
         "name": "FileCollection",
@@ -1159,7 +1227,8 @@
         "name": "UserCollection",
         "fields": [],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of Vercel users"
       },
       {
         "name": "DomainCollection",
@@ -1179,7 +1248,8 @@
                 "description": "The Team identifier or slug to perform the request on behalf of.",
                 "optional": true
               }
-            ]
+            ],
+            "description": "Field representing a single domain item"
           },
           {
             "name": "page",
@@ -1209,11 +1279,13 @@
                 "description": "The Team identifier or slug to perform the request on behalf of.",
                 "optional": true
               }
-            ]
+            ],
+            "description": "Field representing a page of domain items"
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of domain items"
       },
       {
         "name": "DomainPage",
@@ -1230,7 +1302,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a page of domain items."
       },
       {
         "name": "SecretCollection",
@@ -1285,7 +1358,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of secrets in Vercel"
       },
       {
         "name": "SecretPage",
@@ -1302,7 +1376,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of secrets with pagination support"
       },
       {
         "name": "ProjectCollection",
@@ -1322,7 +1397,8 @@
                 "description": "The Team identifier or slug to perform the request on behalf of.",
                 "optional": true
               }
-            ]
+            ],
+            "description": "Retrieve a single Vercel project by ID or name"
           },
           {
             "name": "page",
@@ -1388,11 +1464,13 @@
                 "description": "The Team identifier or slug to perform the request on behalf of.",
                 "optional": true
               }
-            ]
+            ],
+            "description": "Retrieve a page of Vercel projects with optional filtering and search"
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of Vercel projects"
       },
       {
         "name": "ProjectPage",
@@ -1409,7 +1487,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a page of projects on Vercel"
       },
       {
         "name": "VerifyCollection",
@@ -1446,7 +1525,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of verification data for Vercel."
       },
       {
         "name": "VerifyPage",
@@ -1469,7 +1549,8 @@
         "name": "IntegrationCollection",
         "fields": [],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of Vercel integrations"
       },
       {
         "name": "TeamCollection",
@@ -1516,7 +1597,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Collection of team items"
       },
       {
         "name": "TeamPage",
@@ -1533,7 +1615,8 @@
           }
         ],
         "actions": [],
-        "events": []
+        "events": [],
+        "description": "Type representing a page of teams."
       },
       {
         "name": "Tests",
